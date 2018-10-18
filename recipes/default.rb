@@ -6,7 +6,7 @@
 
 Runnable_setup 'mapseq' do
   tool_cookbook_name    'mapseq'
-  runnable_git_repo     'mapseq_runnable'
+  runnable_git_repo     'mapseq-runnable'
   runnable_git_revision 'master'
   build_ehive false
   :create
