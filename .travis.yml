@@ -34,6 +34,12 @@ notifications:
   slack:
     secure: Y92IfCEpjjufjM09p5obRelhnCuYZ72HJ9fVzLF6v+tNfKBBiBCwzEcQ/Ba5GQNLjvOT/fX/YweiOSAPisVK2CrF14IzqPfMK1kNrEFAQTMNDvx2Ojvpi2dQJxW1cOjUQM17Nswj6V8FIyUymmI1uc+PjP2mBSboP9LUDrjDw6+seUMGs0AwMan1MYwGsLs6Ec/BTDMvkY1QIgl/zrG2NNDznXA6EQqoz6rdLelmEs5FhbNXFTJ0kUqST8Sfgmw9+HGFs9D1FIfeuvfApMsT0f48EAbSPSAyv2eILn8aG+V08W+QBikiy+PvhBPireq0ACAqXQefgYANdju2kRVjJPunJoG6Ied7WbQXNPkqArvsdCs7UuU37UEZyqQjVmB9hvxZDwqgpL31Ama6ryjD/LiRikBNW/NwyHgJ2JSpqRjoZczbd39ecfSonvfB2G0d2cC+HLq1j1lcus3Tt9tg+DiHAgrW5tZroCWbEfc1YUuO9EWVkwJmZitab7IUakxk6xcZoXt3yd6jk1Ctd9pSQ0QcNh/uBiZEuyc2o54QtC5A9jP1pN323qp9KnjrOKgaHKXF4bzQiU9OMiBOH4ipEFoaYCfe17HYaBRxFFa+oJI9Rkwg2pidrSlQxHzK4mmggnG5BS5jSDqjQLAjVaZOGt9+hVFJ9M+WgMq8547LpY4=
 before_install:
+- openssl aes-256-cbc -K $encrypted_0ef5a9f6c632_key -iv $encrypted_0ef5a9f6c632_iv
+  -in databags_and_roles.tar.enc -out ~\/.chef/databags_and_roles.tar -d
+- openssl aes-256-cbc -K $encrypted_0ef5a9f6c632_key -iv $encrypted_0ef5a9f6c632_iv
+  -in encrypted_data_bag_secret.enc -out ~\/.chef/encrypted_data_bag_secret -d
+- openssl aes-256-cbc -K $encrypted_0ef5a9f6c632_key -iv $encrypted_0ef5a9f6c632_iv
+  -in eagletravis-ci.enc -out ~\/.ssh/eagletravis-ci -d
 - mkdir ~/chef-repo
 - mkdir ~/.chef
 - openssl aes-256-cbc -K $encrypted_0ef5a9f6c632_key -iv $encrypted_0ef5a9f6c632_iv
