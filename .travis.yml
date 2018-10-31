@@ -11,6 +11,9 @@ branches:
   only:
   - master
 services: docker
+env:
+  matrix:
+  - INSTANCE=default-centos-66
 before_script:
 - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables
   -N DOCKER )
