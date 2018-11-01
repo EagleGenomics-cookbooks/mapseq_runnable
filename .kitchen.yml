@@ -7,7 +7,7 @@ provisioner:
   roles_path: ../../roles
   data_bags_path: ../../data_bags
   encrypted_data_bag_secret_key_path: <%= ENV['HOME'] %>/chef-repo/encrypted_data_bag_secret
-  require_chef_omnibus: = 13.0
+#  require_chef_omnibus: = 13.0
 platforms:
 - name: ubuntu-14.04-docker
   driver:
