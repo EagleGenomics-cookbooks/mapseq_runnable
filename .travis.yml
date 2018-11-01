@@ -23,6 +23,7 @@ before_script:
 - chef gem install kitchen-transport-rsync
 - "/opt/chefdk/bin/chef exec rake tests"
 script:
+- docker login -u $DOCKER_USER -p $DOCKER_PASS
 - KITCHEN_LOCAL_YAML=.kitchen.yml
 - travis_wait 30 /opt/chefdk/embedded/bin/kitchen verify ${INSTANCE}
 after_script:
@@ -47,6 +48,5 @@ before_install:
 - ssh-add ~/.ssh/$AWS_SSH_KEY_ID
 - tar -xvf ~/chef-repo/databags_and_roles.tar -C /home/travis/build/
 after_success:
-- docker login -u $DOCKER_USER -p $DOCKER_PASS
 - docker commit mapseq-runnable eaglegenomics/mapseq:auto-build
 - docker push eaglegenomics/mapseq:auto-build
