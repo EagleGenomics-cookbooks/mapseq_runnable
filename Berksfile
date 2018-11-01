@@ -19,6 +19,7 @@ company_cookbook 'ensembl-api', '', tag: 'ensembl-84'
 company_cookbook 'R2R', '= 1.0.0', tag: '1.0.0'
 company_cookbook 'Samtools'
 
+cookbook 'seven_zip', '~> 2.0.02'
 cookbook 'r', git: 'https://github.com/stevendanna/cookbook-r.git'
 cookbook 'tarball', git: 'https://github.com/ooyala/tarball-chef-cookbook.git'
 
