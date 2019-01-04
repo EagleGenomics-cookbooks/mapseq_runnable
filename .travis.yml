@@ -48,5 +48,5 @@ before_install:
 - ssh-add ~/.ssh/$AWS_SSH_KEY_ID
 - tar -xvf ~/chef-repo/databags_and_roles.tar -C /home/travis/build/
 after_success:
-- docker commit mapseq-runnable eaglegenomics/mapseq:auto-build
+- docker commit mapseq_runnable eaglegenomics/mapseq:auto-build
 - docker push eaglegenomics/mapseq:auto-build
